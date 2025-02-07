@@ -1,5 +1,15 @@
 # Google Gemini Changelog
 
+## [Gemini 2.0 Update] - 2025-02-07
+
+Added latest models:
+
+- Gemini 2.0 Flash
+- Gemini 2.0 Flash Lite Preview
+- Gemini 2.0 Pro Experimental
+- Gemini 2.0 Flash Thinking Experimental
+
+
 ## [Append Selected Text to Chat] - 2025-02-04
 
 - Ability to append selected text to the chat command with the `Append to Chat` command. Shortcut: `Ctrl + Shift + V`
