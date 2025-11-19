@@ -11,6 +11,7 @@ import {
   MasterPasswordMissingError,
   ParseError,
   TimeoutError,
+  TouchIDVerificationFailed,
   captureException,
   getErrorAction,
   getErrorString,
@@ -58,6 +59,10 @@ async function dcli(...args: string[]) {
 
           if (stderr.includes("Please enter your email address")) {
             throw new CLINotLoggedInError(error.stack ?? error.message);
+          }
+
+          if (stderr.includes("Touch ID verification failed")) {
+            throw new TouchIDVerificationFailed(error.stack ?? error.message);
           }
 
           throw new TimeoutError(error.stack ?? error.message);
