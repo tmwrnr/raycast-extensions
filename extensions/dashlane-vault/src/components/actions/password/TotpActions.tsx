@@ -29,10 +29,8 @@ export default function TotpActions({ item }: Props) {
 
   return (
     <>
-      {/* eslint-disable-next-line @raycast/prefer-title-case*/}
       <Action title="Copy TOTP" onAction={copyTotp} icon={Icon.Clipboard} shortcut={{ modifiers: ["cmd"], key: "t" }} />
       <Action
-        // eslint-disable-next-line @raycast/prefer-title-case
         title={currentApplication ? `Paste TOTP into ${currentApplication.name}` : "Paste TOTP"}
         onAction={pasteTotp}
         icon={Icon.Window}

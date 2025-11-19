@@ -199,8 +199,7 @@ function parseNotes(jsonString: string): VaultNote[] {
       if (item.attachments && typeof item.attachments === "string") {
         try {
           item.attachments = JSON.parse(item.attachments);
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (error) {
+        } catch {
           // Do nothing
         }
       }
@@ -238,8 +237,7 @@ async function getCLIVersion() {
 
     const result = await execa(CLI_PATH, ["--version"]);
     return result.stdout;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch {
     return undefined;
   }
 }
