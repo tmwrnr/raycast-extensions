@@ -1,5 +1,10 @@
 # Dashlane Vault Changelog
 
+## [Improvements] - 2025-11-19
+
+- Update dependencies
+- Improve error feedback for Touch ID failure
+
 ## [Improvements] - 2025-02-04
 
 - Add Manage devices command
