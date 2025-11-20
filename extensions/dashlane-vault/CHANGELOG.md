@@ -1,6 +1,6 @@
 # Dashlane Vault Changelog
 
-## [Improvements] - {PR_MERGE_DATE}
+## [Improvements] - 2025-11-20
 
 - Update dependencies
 - Improve error feedback for Touch ID failure
