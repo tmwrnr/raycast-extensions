@@ -5,6 +5,7 @@ import PQueue from "p-queue";
 import { safeParse } from "valibot";
 
 import {
+  AuthError,
   CLINotFoundError,
   CLINotLoggedInError,
   CLIVersionNotSupportedError,
@@ -63,6 +64,10 @@ async function dcli(...args: string[]) {
 
           if (stderr.includes("Touch ID verification failed")) {
             throw new TouchIDVerificationFailed(error.stack ?? error.message);
+          }
+
+          if (stderr.includes("Error during authentication")) {
+            throw new AuthError(error.stack ?? error.message);
           }
 
           throw new TimeoutError(error.stack ?? error.message);
@@ -158,6 +163,15 @@ export async function getOtpSecret(id: string) {
       otp,
       expireIn,
     };
+  } catch (error) {
+    captureException(error);
+    throw error;
+  }
+}
+
+export async function logout() {
+  try {
+    await dcli("logout");
   } catch (error) {
     captureException(error);
     throw error;

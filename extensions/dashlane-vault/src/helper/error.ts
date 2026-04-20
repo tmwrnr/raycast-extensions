@@ -1,3 +1,4 @@
+import { logout } from "@/lib/dcli";
 import { Toast, captureException as captureExceptionInternal, open, openExtensionPreferences } from "@raycast/api";
 
 export const OpenPreferencesAction: Toast.ActionOptions = {
@@ -88,6 +89,19 @@ export class TimeoutError extends DisplayableError {
   }
 }
 
+export class AuthError extends DisplayableError {
+  name = "AuthError";
+  action: Toast.ActionOptions = {
+    title: "Logout",
+    shortcut: { modifiers: ["cmd"], key: "l" },
+    onAction: () => logout(),
+  };
+
+  constructor(stack?: string) {
+    super("Authentication error. Please log out and log back in.", stack);
+  }
+}
+
 /**
  * These errors are shown buz should not be send to raycast
  */
@@ -98,6 +112,7 @@ const uncapturedErrors = [
   TimeoutError,
   CLINotFoundError,
   TouchIDVerificationFailed,
+  AuthError,
 ];
 
 /**
