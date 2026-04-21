@@ -1,6 +1,6 @@
 # Dashlane Vault Changelog
 
-## [Improvements] - {PR_MERGE_DATE}
+## [Improvements] - 2026-04-21
 
 - Update dependencies
 - Improve error feedback for authentication error
