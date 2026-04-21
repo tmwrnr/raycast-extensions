@@ -67,7 +67,14 @@ async function dcli(...args: string[]) {
           }
 
           if (stderr.includes("Error during authentication")) {
-            throw new AuthError(error.stack ?? error.message);
+            throw new AuthError(
+              {
+                title: "Logout",
+                shortcut: { modifiers: ["cmd"], key: "l" },
+                onAction: () => logout(),
+              },
+              error.stack ?? error.message,
+            );
           }
 
           throw new TimeoutError(error.stack ?? error.message);
