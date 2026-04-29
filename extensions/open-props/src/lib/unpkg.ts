@@ -2,7 +2,7 @@ import { ofetch } from "ofetch";
 import { SupportedVersion } from "./open-props/types";
 
 export function buildUnpkgUrl(path: string, version: SupportedVersion = "1"): string {
-  return `https://unpkg.com/open-props@${version ?? "latest"}/${path}`;
+  return `https://unpkg.com/open-props@${version}/${path}`;
 }
 
 export async function fetchPackageVersion(version: SupportedVersion = "1") {
