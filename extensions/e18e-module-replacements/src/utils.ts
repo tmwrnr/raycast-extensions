@@ -2,18 +2,6 @@ import { type KnownUrl } from "module-replacements";
 
 import { ALL_MODULES } from "./constants";
 
-export function resolveUrl(url: KnownUrl): string {
-  if (typeof url === "string") return url;
-  switch (url.type) {
-    case "mdn":
-      return `https://developer.mozilla.org/en-US/docs/Web/${url.id}`;
-    case "node":
-      return `https://nodejs.org/api/${url.id}`;
-    case "e18e":
-      return `https://e18e.dev/docs/replacements/${url.id}`;
-  }
-}
-
 export function urlLabel(url: KnownUrl): string {
   if (typeof url === "string") return url;
   switch (url.type) {
