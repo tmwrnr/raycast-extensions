@@ -5,12 +5,14 @@ export function ActionPanelCssItem({ name, value }: { name: string; value: strin
     <ActionPanel>
       <ActionPanel.Section title="Paste">
         <Action.Paste title="Paste Variable" content={name} />
-        <Action.Paste title="Paste as Var()" content={`var(${name})`} />
+        {/* eslint-disable-next-line @raycast/prefer-title-case*/}
+        <Action.Paste title="Paste as var()" content={`var(${name})`} />
       </ActionPanel.Section>
       <ActionPanel.Section title="Copy">
         <Action.CopyToClipboard title="Copy Variable" content={name} shortcut={Keyboard.Shortcut.Common.CopyName} />
         <Action.CopyToClipboard
-          title="Copy as Var()"
+          // eslint-disable-next-line @raycast/prefer-title-case
+          title="Copy as var()"
           content={`var(${name})`}
           shortcut={Keyboard.Shortcut.Common.Copy}
         />
