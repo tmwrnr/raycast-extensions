@@ -77,7 +77,7 @@ export function DetailView({ moduleName }: Props) {
               {replacement.type === "documented" && (
                 <>
                   {/* eslint-disable-next-line @raycast/prefer-title-case*/}
-                  <Action.OpenInBrowser title="Open on npmx" url={`https://www.npmx.dev/package/${moduleName}`} />
+                  <Action.OpenInBrowser title="Open on npmx" url={`https://www.npmx.dev/package/${replacement.id}`} />
                   <Action.CopyToClipboard title="Copy Package Name" content={replacement.id} />
                 </>
               )}
