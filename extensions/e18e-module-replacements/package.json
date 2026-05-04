@@ -25,7 +25,6 @@
   ],
   "dependencies": {
     "@raycast/api": "^1.104.15",
-    "@raycast/utils": "^2.2.0",
     "module-replacements": "^3.0.0-beta.7"
   },
   "devDependencies": {
